@@ -1,0 +1,107 @@
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  background-color: #282626;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  
+  height: 100vh;
+
+  scroll-snap-align: start;
+}
+.images {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .animate {
+  transition: 0.8s ease;
+  filter: blur(5px);
+}
+section.show-animate .animate {
+  filter: blur(0);
+}
+.sec_1 .animate {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.sec_1.show-animate .animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sec_2 .animate {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.sec_2.show-animate .animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+.sec_3 .animate {
+  transform: scale(.7);
+  opacity: 0;
+}
+.sec_3.show-animate .animate {
+  transform: scale(1);
+  opacity: 1;
+}
+.sec_4 .animateRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #282626;
+  transition: 1s ease;
+  transition-delay: calc(0.2s * var(--i));
+}
+.sec_4.show-animate .animateRight {
+  width: 0;
+}
+.sec_5 .animate {
+  transition: 0.7s ease;
+  transform: translateX(-200%);
+  opacity: 0;
+}
+.sec_5 .animate:nth-child(3) { transition-delay: 200ms; }
+.sec_5 .animate:nth-child(2) { transition-delay: 400ms; }
+.sec_5 .animate:nth-child(1) { transition-delay: 600ms; }
+.sec_5.show-animate .animate{
+  transform: translateX(0);
+  opacity: 1;
+}
+h1 {
+  position: relative;
+  font-size: 48px;
+}
+h2 {
+  font-size: 48px;
+}
+p {
+  font-size: 26px;
+  color: aqua;
+}
+.sec_2 p {
+  color: rgb(63, 199, 108);
+}
+.sec_3 p {
+  color: rgb(117, 93, 225);
+}
+.sec_4 p{
+  color: rgb(221, 10, 91)
+}
+.sec_5 .images img {
+  max-width: 400px;
+  margin-right: 15px;
+}
